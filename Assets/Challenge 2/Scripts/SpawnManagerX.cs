@@ -31,5 +31,7 @@ public class SpawnManagerX : MonoBehaviour
 
         spawnInterval = Random.Range(0.5f, 3.0f);
         Invoke("SpawnRandomBall", spawnInterval);
+
+        Debug.Log("SpawnInterval: " + spawnInterval);
     }
 }
