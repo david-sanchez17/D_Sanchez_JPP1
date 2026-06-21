@@ -1,24 +1,19 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerControllerX : MonoBehaviour
+public class PlayerControllerC2 : MonoBehaviour
 {
     public GameObject dogPrefab;
-    public InputAction fireAction;
+    public float fireDelay = 60.0f;  
 
     // Start is called before the first frame update
-    void Start()
-    {
-        fireAction.Enable();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        // On spacebar press, send dog
-        if (fireAction.triggered)
+        fireDelay -= 0.1f;
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
+            fireDelay = 20.0f;
         }
     }
 }
