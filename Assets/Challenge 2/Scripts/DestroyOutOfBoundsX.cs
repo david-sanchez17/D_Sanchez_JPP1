@@ -11,12 +11,12 @@ public class DestroyOutOfBoundsX : MonoBehaviour
     void Update()
     {
         // Destroy dogs if x position less than left limit
-        if (transform.position.x < leftLimit)
+        if (transform.position.x < bottomLimit)
         {
             Destroy(gameObject);
         } 
         // Destroy balls if y position is less than bottomLimit
-        else if (transform.position.y < bottomLimit)
+        else if (transform.position.y < leftLimit)
         {
             Destroy(gameObject);
         }
